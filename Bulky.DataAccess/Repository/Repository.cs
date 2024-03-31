@@ -28,6 +28,7 @@ namespace Bulky.DataAccess.Repository
 
         public T Get(Expression<Func<T, bool>> filter)
         {
+            //IQueryable is used for retrieve filter data from database
             IQueryable<T> query = dbset;
             query = query.Where(filter);
             return query.FirstOrDefault();
